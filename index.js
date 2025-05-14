@@ -9,7 +9,7 @@ app.get('/',(req,res)=>{
 
 app.post('/login',(req,res)=>{
     const{username,email,password,dateofbirth}=req.body;
-});
+
 
 
 if(!username){
@@ -28,12 +28,13 @@ if(!dateofbirth){
     return res.status(400).json ({message:"dateofbirth cannot be empty"})
 };
 
-return res.status(200).json({
+ res.status(200).json({
     message:"login successful",
     data:{
         email: email
     }
 
+});
 });
 
 app.listen(3000,()=>{
